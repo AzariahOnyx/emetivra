@@ -4,6 +4,8 @@ Local-first Markdown documentation auditing and reproducible keyword-retrieval b
 
 ## Features
 
+- **v1.0 Judged Evaluation**: manually annotated chunk-relevance datasets, source fingerprints, provenance, P@3 / Recall@3 / Hit@3 / MRR@3 / nDCG@3, ranked evidence and JSON/Markdown/CSV exports. No fabricated gold labels.
+
 - Modern responsive UI with reduced-motion accessibility support.
 - Markdown upload and document audit with evidence-linked recommendations.
 - Browser-local history and JSON, Markdown, CSV exports.
@@ -37,6 +39,16 @@ Repository: `AzariahOnyx/emetivra`. The existing Vercel project `emetivra` is li
 - A zero metric delta is a valid result. No improvement is assumed or fabricated.
 - No model calls, API keys, paid services, or remote document processing.
 - Browser history contains full document text; clear it on shared devices.
+
+## Judged evaluation workflow (v1.0)
+
+1. Paste the Markdown source into the Source knowledge editor.
+2. Open **Judged Evaluation** and select **Create annotation template**. The template lists chunk IDs and excerpts for both strategies.
+3. Add `queries` with unique `id`, `query` and `relevant` maps, e.g. `{ "id":"q1", "query":"How do I refresh a token?", "relevant":{"fixed":["fixed:1"],"heading-aware":["heading-aware:2"]} }`. Labels must come from your manual assessment of each chunk, not from EMETIVRA.
+4. Set `annotationStatus` to `judged`, enter an annotator identifier and an ISO date (`YYYY-MM-DD`), then run evaluation.
+5. Export JSON/Markdown/CSV results. Use **Save dataset JSON** to export your completed annotation file for reproducibility; the app does not persist the judgment draft.
+
+**Important:** The app does not verify that judgments are independent or exhaustive. Empty relevance arrays are rejected, and unjudged chunks are treated as nonrelevant. Chunk IDs and fingerprints bind the dataset to this specific source and chunk configuration; changing the source requires relabeling. The fingerprint is not cryptographic.
 
 ## Release verification
 
