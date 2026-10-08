@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {words,sections,chunk,bm25,evaluate} from '../src/retrieval.mjs';
+const corpus='# Guide\n\nOverview.\n\n## Apples\n\nApple fruit is red.\n\n## Bananas\n\nBanana fruit is yellow.';
+test('sections have exact source word offsets',()=>{const s=sections(corpus),w=words(corpus);for(const x of s)assert.equal(w.slice(x.start,x.end).join(' '),words(x.text).join(' '))});
+test('fixed chunks overlap by specified count',()=>{const cs=chunk(Array.from({length:20},(_,i)=>'w'+i).join(' '),'fixed',8,2);assert.deepEqual(cs.map(x=>[x.start,x.end]),[[0,8],[6,14],[12,20]])});
+test('heading-aware chunks preserve source section labels',()=>{const cs=chunk(corpus,'heading-aware');assert(cs.some(c=>c.section==='Apples'));assert(cs.some(c=>c.section==='Bananas'))});
+test('BM25 ranks exact query match first',()=>{const c=[{text:'apples fruit'},{text:'bananas yellow'}];assert.equal(bm25(c,'yellow')[0].text,'bananas yellow')});
+test('stable BM25 ties',()=>{assert.deepEqual(bm25([{text:'a'},{text:'b'}],'absent').map(x=>x.index),[0,1])});
+test('Recall@K and MRR@K are computed from first relevant rank',()=>{const r=evaluate(corpus,[{query:'banana yellow',heading:'Bananas'}],'heading-aware',3);assert.equal(r.recallAtK,1);assert.equal(r.mrrAtK,1)});
+test('fixed relevance uses exact word overlap, not common tokens',()=>{const src='# Title\n\n## Red\n\nshared shared shared\n\n## Blue\n\nshared shared shared';const r=evaluate(src,[{query:'shared',heading:'Blue'}],'fixed',1);assert.equal(r.results[0].top[0].relevant,true);assert.equal(r.chunkCount,1)});
+test('invalid or ambiguous labels are rejected',()=>{assert.throws(()=>evaluate(corpus,[{query:'a',heading:'Unknown'}],'fixed'),/uniquely/);assert.throws(()=>evaluate('# X\n\n## Dup\nA\n\n## Dup\nB',[{query:'a',heading:'Dup'}],'heading-aware'),/uniquely/)});
+test('invalid chunk parameters are rejected',()=>assert.throws(()=>chunk('abc','fixed',5,5),/Invalid chunk/));
+test('empty corpus and query list are rejected',()=>{assert.throws(()=>evaluate('',[{query:'a',heading:'X'}],'fixed'),/Empty/);assert.throws(()=>evaluate(corpus,[],'fixed'),/query/)});
