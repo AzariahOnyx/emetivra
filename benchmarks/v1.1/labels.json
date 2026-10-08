@@ -1,0 +1,679 @@
+{
+  "schemaVersion": "1.0",
+  "corpusFingerprint": "fnv1a32:0b8cb02b:7113",
+  "annotationStatus": "judged",
+  "annotator": "EMETIVRA project author — rule-derived demo, NOT independent human review",
+  "annotationDate": "2026-10-08",
+  "instructions": "Manually inspect the source and chunk catalog. Enter ALL relevant chunk IDs for each query under each strategy. Do not treat empty arrays as negative judgments; evaluation requires at least one relevant chunk for each query and strategy.",
+  "config": {
+    "k": 3,
+    "chunkSize": 70,
+    "overlap": 15,
+    "ranker": "BM25",
+    "k1": 1.2,
+    "b": 0.75
+  },
+  "chunks": {
+    "fixed": [
+      {
+        "id": "fixed:0",
+        "index": 0,
+        "start": 0,
+        "end": 70,
+        "section": null,
+        "excerpt": "# Atlas Platform Operations Guide This fictional Atlas service handbook is a controlled test corpus for retrieval evaluation. It is not product documentation. All credentials, limits, addresses, and behaviors below are invented for this synthetic example. Each task describes one independent operation. ## Create an API token The token console issues short-lived API tokens for command-line clients. First sign in with an operator account, open the Access page, and choose"
+      },
+      {
+        "id": "fixed:1",
+        "index": 1,
+        "start": 55,
+        "end": 125,
+        "section": null,
+        "excerpt": "command-line clients. First sign in with an operator account, open the Access page, and choose New token. Assign a read-only scope unless a write operation is necessary. Copy the token once into an approved secrets vault. The system does not display the full token again. Rotate the token before its expiry and avoid pasting it into tickets or logs. For a rejected token, check its scope and expiration before attempting"
+      },
+      {
+        "id": "fixed:2",
+        "index": 2,
+        "start": 110,
+        "end": 180,
+        "section": null,
+        "excerpt": "into tickets or logs. For a rejected token, check its scope and expiration before attempting to issue another credential. ## Rotate an API token Token rotation replaces an active credential without requiring an application restart. In the Access page, select the existing token and choose Rotate. The system issues a replacement credential and keeps the old credential usable for a five-minute transition window. Update the application secret during that window,"
+      },
+      {
+        "id": "fixed:3",
+        "index": 3,
+        "start": 165,
+        "end": 235,
+        "section": null,
+        "excerpt": "old credential usable for a five-minute transition window. Update the application secret during that window, then confirm that requests succeed with the replacement. Revoke the old token after verification. If the secret deployment fails, keep the old token only until the transition expires and repeat rotation with a new credential. ## Recover a locked account Five failed sign-in attempts trigger a fifteen-minute account lock. To regain access, select Forgot password"
+      },
+      {
+        "id": "fixed:4",
+        "index": 4,
+        "start": 220,
+        "end": 290,
+        "section": null,
+        "excerpt": "Five failed sign-in attempts trigger a fifteen-minute account lock. To regain access, select Forgot password on the sign-in screen and follow the one-time recovery link sent to the registered email address. The recovery link expires after twenty minutes. If the registered email is unavailable, contact the identity administrator to verify ownership through the established support process. Never share recovery links in a public chat. A successful password reset does not"
+      },
+      {
+        "id": "fixed:5",
+        "index": 5,
+        "start": 275,
+        "end": 345,
+        "section": null,
+        "excerpt": "process. Never share recovery links in a public chat. A successful password reset does not bypass a separately enforced multi-factor authentication challenge. ## Configure multi-factor authentication Administrators require a second factor for privileged Atlas accounts. Open Profile, select Security, and register a time-based authenticator application. Scan the enrollment QR code using the authenticator, then enter the six-digit verification code. Store the recovery codes in an approved secure lo"
+      },
+      {
+        "id": "fixed:6",
+        "index": 6,
+        "start": 330,
+        "end": 400,
+        "section": null,
+        "excerpt": "the six-digit verification code. Store the recovery codes in an approved secure location, not alongside the password. Hardware security keys may also be registered where supported. If the mobile device is lost, use an unused recovery code and immediately replace the missing authenticator enrollment. ## Publish a document version Publishing makes a reviewed document revision visible to readers. Open the document, choose the target environment, and select Publish version. The"
+      },
+      {
+        "id": "fixed:7",
+        "index": 7,
+        "start": 385,
+        "end": 455,
+        "section": null,
+        "excerpt": "visible to readers. Open the document, choose the target environment, and select Publish version. The publication queue records a version identifier and processing status. A successful queue acknowledgment does not guarantee that every edge cache has refreshed. Check the published version identifier from the reader endpoint before announcing completion. If the version is incorrect, publish the last approved revision again rather than editing the already released artifact in place. ##"
+      },
+      {
+        "id": "fixed:8",
+        "index": 8,
+        "start": 440,
+        "end": 510,
+        "section": null,
+        "excerpt": "the last approved revision again rather than editing the already released artifact in place. ## Roll back a release A rollback restores the last approved application artifact when a new release causes errors. Open Releases, locate the previous healthy deployment, and select Promote to production. Monitor error rate and request latency for ten minutes after promotion. A rollback changes the running application artifact but does not reverse database migrations automatically."
+      },
+      {
+        "id": "fixed:9",
+        "index": 9,
+        "start": 495,
+        "end": 565,
+        "section": null,
+        "excerpt": "promotion. A rollback changes the running application artifact but does not reverse database migrations automatically. If a migration is incompatible, follow the separate database recovery runbook before restoring application traffic. Record the incident and the promoted release identifier in the change log. ## Investigate rate limits Atlas returns HTTP 429 when a client exceeds its request quota. The response includes a Retry-After header indicating when the client may send another"
+      },
+      {
+        "id": "fixed:10",
+        "index": 10,
+        "start": 550,
+        "end": 620,
+        "section": null,
+        "excerpt": "request quota. The response includes a Retry-After header indicating when the client may send another request. Implement exponential backoff with jitter, and honor Retry-After when present. Avoid synchronized retries from many workers. Administrators can inspect quota usage on the Usage dashboard and request a higher limit through the support channel. Repeated 429 responses are not evidence that an API token is invalid; verify quotas before rotating credentials. ## Diagnose a"
+      },
+      {
+        "id": "fixed:11",
+        "index": 11,
+        "start": 605,
+        "end": 675,
+        "section": null,
+        "excerpt": "evidence that an API token is invalid; verify quotas before rotating credentials. ## Diagnose a failed webhook Webhook delivery failures appear in the Integrations event log. Open the failed delivery record to inspect its HTTP response code and retry count. The receiver must return a two-hundred-range status within five seconds to acknowledge delivery. Atlas retries transient failures with exponential delays for up to twenty-four hours. Verify that the receiver URL"
+      },
+      {
+        "id": "fixed:12",
+        "index": 12,
+        "start": 660,
+        "end": 730,
+        "section": null,
+        "excerpt": "transient failures with exponential delays for up to twenty-four hours. Verify that the receiver URL is reachable, TLS certificates are valid, and the signature header matches the configured secret. Do not disable signature verification merely to make a failed delivery succeed. ## Restore a database backup Database restoration replaces the contents of the selected staging database with a stored snapshot. Confirm the destination environment, snapshot timestamp, and retention policy before"
+      },
+      {
+        "id": "fixed:13",
+        "index": 13,
+        "start": 715,
+        "end": 785,
+        "section": null,
+        "excerpt": "database with a stored snapshot. Confirm the destination environment, snapshot timestamp, and retention policy before starting. Run the restore from the Backups console and wait for the validation step to complete. Production restoration requires a separate change approval and is not performed by this staging procedure. After restoration, compare table counts and run application smoke tests. A successful restore job alone does not prove that all application workflows are healthy."
+      },
+      {
+        "id": "fixed:14",
+        "index": 14,
+        "start": 770,
+        "end": 840,
+        "section": null,
+        "excerpt": "tests. A successful restore job alone does not prove that all application workflows are healthy. ## Export an audit log Security audit events are retained for ninety days in the standard Atlas plan. To export events, open Security, choose Audit log, select a date range, and download the CSV file. Exports include actor, action, resource identifier, and event timestamp. Store downloaded audit logs in restricted storage because they may reveal"
+      },
+      {
+        "id": "fixed:15",
+        "index": 15,
+        "start": 825,
+        "end": 895,
+        "section": null,
+        "excerpt": "identifier, and event timestamp. Store downloaded audit logs in restricted storage because they may reveal sensitive operational metadata. For investigations older than the retention window, consult the organization’s external archival system if one has been configured. Atlas does not promise recovery of events beyond its configured retention. ## Configure a health check The health endpoint responds with HTTP 200 when the application is ready to serve traffic and HTTP 503"
+      },
+      {
+        "id": "fixed:16",
+        "index": 16,
+        "start": 880,
+        "end": 950,
+        "section": null,
+        "excerpt": "responds with HTTP 200 when the application is ready to serve traffic and HTTP 503 while required dependencies are unavailable. Configure the load balancer to call /health/ready every thirty seconds. Set the failure threshold to three consecutive unsuccessful probes to avoid unnecessary traffic shifts during brief network interruptions. A readiness check is not a substitute for end-to-end transaction monitoring. For debugging, inspect dependency health and application logs before changing the"
+      },
+      {
+        "id": "fixed:17",
+        "index": 17,
+        "start": 935,
+        "end": 1005,
+        "section": null,
+        "excerpt": "for end-to-end transaction monitoring. For debugging, inspect dependency health and application logs before changing the probe interval or disabling health checks. ## Set up a scheduled report Scheduled reports summarize Atlas usage at a selected interval. In Analytics, open Reports and select Create schedule. Choose a report template, weekly cadence, and destination email group. The report uses the workspace time zone, not the viewer's browser time zone. Verify the recipient"
+      },
+      {
+        "id": "fixed:18",
+        "index": 18,
+        "start": 990,
+        "end": 1043,
+        "section": null,
+        "excerpt": "report uses the workspace time zone, not the viewer's browser time zone. Verify the recipient list before enabling the schedule to prevent data leakage. A report may be delayed if the underlying analytics aggregation has not finished. If a schedule is missing, inspect its status and the analytics processing queue before recreating it."
+      }
+    ],
+    "heading-aware": [
+      {
+        "id": "heading-aware:0",
+        "index": 0,
+        "start": 0,
+        "end": 70,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "# Atlas Platform Operations Guide This fictional Atlas service handbook is a controlled test corpus for retrieval evaluation. It is not product documentation. All credentials, limits, addresses, and behaviors below are invented for this synthetic example. Each task describes one independent operation. ## Create an API token The token console issues short-lived API tokens for command-line clients. First sign in with an operator account, open the Access page, and choose"
+      },
+      {
+        "id": "heading-aware:1",
+        "index": 1,
+        "start": 55,
+        "end": 125,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "command-line clients. First sign in with an operator account, open the Access page, and choose New token. Assign a read-only scope unless a write operation is necessary. Copy the token once into an approved secrets vault. The system does not display the full token again. Rotate the token before its expiry and avoid pasting it into tickets or logs. For a rejected token, check its scope and expiration before attempting"
+      },
+      {
+        "id": "heading-aware:2",
+        "index": 2,
+        "start": 110,
+        "end": 180,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "into tickets or logs. For a rejected token, check its scope and expiration before attempting to issue another credential. ## Rotate an API token Token rotation replaces an active credential without requiring an application restart. In the Access page, select the existing token and choose Rotate. The system issues a replacement credential and keeps the old credential usable for a five-minute transition window. Update the application secret during that window,"
+      },
+      {
+        "id": "heading-aware:3",
+        "index": 3,
+        "start": 165,
+        "end": 235,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "old credential usable for a five-minute transition window. Update the application secret during that window, then confirm that requests succeed with the replacement. Revoke the old token after verification. If the secret deployment fails, keep the old token only until the transition expires and repeat rotation with a new credential. ## Recover a locked account Five failed sign-in attempts trigger a fifteen-minute account lock. To regain access, select Forgot password"
+      },
+      {
+        "id": "heading-aware:4",
+        "index": 4,
+        "start": 220,
+        "end": 290,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "Five failed sign-in attempts trigger a fifteen-minute account lock. To regain access, select Forgot password on the sign-in screen and follow the one-time recovery link sent to the registered email address. The recovery link expires after twenty minutes. If the registered email is unavailable, contact the identity administrator to verify ownership through the established support process. Never share recovery links in a public chat. A successful password reset does not"
+      },
+      {
+        "id": "heading-aware:5",
+        "index": 5,
+        "start": 275,
+        "end": 345,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "process. Never share recovery links in a public chat. A successful password reset does not bypass a separately enforced multi-factor authentication challenge. ## Configure multi-factor authentication Administrators require a second factor for privileged Atlas accounts. Open Profile, select Security, and register a time-based authenticator application. Scan the enrollment QR code using the authenticator, then enter the six-digit verification code. Store the recovery codes in an approved secure lo"
+      },
+      {
+        "id": "heading-aware:6",
+        "index": 6,
+        "start": 330,
+        "end": 400,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "the six-digit verification code. Store the recovery codes in an approved secure location, not alongside the password. Hardware security keys may also be registered where supported. If the mobile device is lost, use an unused recovery code and immediately replace the missing authenticator enrollment. ## Publish a document version Publishing makes a reviewed document revision visible to readers. Open the document, choose the target environment, and select Publish version. The"
+      },
+      {
+        "id": "heading-aware:7",
+        "index": 7,
+        "start": 385,
+        "end": 455,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "visible to readers. Open the document, choose the target environment, and select Publish version. The publication queue records a version identifier and processing status. A successful queue acknowledgment does not guarantee that every edge cache has refreshed. Check the published version identifier from the reader endpoint before announcing completion. If the version is incorrect, publish the last approved revision again rather than editing the already released artifact in place. ##"
+      },
+      {
+        "id": "heading-aware:8",
+        "index": 8,
+        "start": 440,
+        "end": 510,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "the last approved revision again rather than editing the already released artifact in place. ## Roll back a release A rollback restores the last approved application artifact when a new release causes errors. Open Releases, locate the previous healthy deployment, and select Promote to production. Monitor error rate and request latency for ten minutes after promotion. A rollback changes the running application artifact but does not reverse database migrations automatically."
+      },
+      {
+        "id": "heading-aware:9",
+        "index": 9,
+        "start": 495,
+        "end": 565,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "promotion. A rollback changes the running application artifact but does not reverse database migrations automatically. If a migration is incompatible, follow the separate database recovery runbook before restoring application traffic. Record the incident and the promoted release identifier in the change log. ## Investigate rate limits Atlas returns HTTP 429 when a client exceeds its request quota. The response includes a Retry-After header indicating when the client may send another"
+      },
+      {
+        "id": "heading-aware:10",
+        "index": 10,
+        "start": 550,
+        "end": 620,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "request quota. The response includes a Retry-After header indicating when the client may send another request. Implement exponential backoff with jitter, and honor Retry-After when present. Avoid synchronized retries from many workers. Administrators can inspect quota usage on the Usage dashboard and request a higher limit through the support channel. Repeated 429 responses are not evidence that an API token is invalid; verify quotas before rotating credentials. ## Diagnose a"
+      },
+      {
+        "id": "heading-aware:11",
+        "index": 11,
+        "start": 605,
+        "end": 675,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "evidence that an API token is invalid; verify quotas before rotating credentials. ## Diagnose a failed webhook Webhook delivery failures appear in the Integrations event log. Open the failed delivery record to inspect its HTTP response code and retry count. The receiver must return a two-hundred-range status within five seconds to acknowledge delivery. Atlas retries transient failures with exponential delays for up to twenty-four hours. Verify that the receiver URL"
+      },
+      {
+        "id": "heading-aware:12",
+        "index": 12,
+        "start": 660,
+        "end": 730,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "transient failures with exponential delays for up to twenty-four hours. Verify that the receiver URL is reachable, TLS certificates are valid, and the signature header matches the configured secret. Do not disable signature verification merely to make a failed delivery succeed. ## Restore a database backup Database restoration replaces the contents of the selected staging database with a stored snapshot. Confirm the destination environment, snapshot timestamp, and retention policy before"
+      },
+      {
+        "id": "heading-aware:13",
+        "index": 13,
+        "start": 715,
+        "end": 785,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "database with a stored snapshot. Confirm the destination environment, snapshot timestamp, and retention policy before starting. Run the restore from the Backups console and wait for the validation step to complete. Production restoration requires a separate change approval and is not performed by this staging procedure. After restoration, compare table counts and run application smoke tests. A successful restore job alone does not prove that all application workflows are healthy."
+      },
+      {
+        "id": "heading-aware:14",
+        "index": 14,
+        "start": 770,
+        "end": 840,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "tests. A successful restore job alone does not prove that all application workflows are healthy. ## Export an audit log Security audit events are retained for ninety days in the standard Atlas plan. To export events, open Security, choose Audit log, select a date range, and download the CSV file. Exports include actor, action, resource identifier, and event timestamp. Store downloaded audit logs in restricted storage because they may reveal"
+      },
+      {
+        "id": "heading-aware:15",
+        "index": 15,
+        "start": 825,
+        "end": 895,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "identifier, and event timestamp. Store downloaded audit logs in restricted storage because they may reveal sensitive operational metadata. For investigations older than the retention window, consult the organization’s external archival system if one has been configured. Atlas does not promise recovery of events beyond its configured retention. ## Configure a health check The health endpoint responds with HTTP 200 when the application is ready to serve traffic and HTTP 503"
+      },
+      {
+        "id": "heading-aware:16",
+        "index": 16,
+        "start": 880,
+        "end": 950,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "responds with HTTP 200 when the application is ready to serve traffic and HTTP 503 while required dependencies are unavailable. Configure the load balancer to call /health/ready every thirty seconds. Set the failure threshold to three consecutive unsuccessful probes to avoid unnecessary traffic shifts during brief network interruptions. A readiness check is not a substitute for end-to-end transaction monitoring. For debugging, inspect dependency health and application logs before changing the"
+      },
+      {
+        "id": "heading-aware:17",
+        "index": 17,
+        "start": 935,
+        "end": 1005,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "for end-to-end transaction monitoring. For debugging, inspect dependency health and application logs before changing the probe interval or disabling health checks. ## Set up a scheduled report Scheduled reports summarize Atlas usage at a selected interval. In Analytics, open Reports and select Create schedule. Choose a report template, weekly cadence, and destination email group. The report uses the workspace time zone, not the viewer's browser time zone. Verify the recipient"
+      },
+      {
+        "id": "heading-aware:18",
+        "index": 18,
+        "start": 990,
+        "end": 1043,
+        "section": "Atlas Platform Operations Guide",
+        "excerpt": "report uses the workspace time zone, not the viewer's browser time zone. Verify the recipient list before enabling the schedule to prevent data leakage. A report may be delayed if the underlying analytics aggregation has not finished. If a schedule is missing, inspect its status and the analytics processing queue before recreating it."
+      },
+      {
+        "id": "heading-aware:19",
+        "index": 19,
+        "start": 42,
+        "end": 112,
+        "section": "Create an API token",
+        "excerpt": "## Create an API token The token console issues short-lived API tokens for command-line clients. First sign in with an operator account, open the Access page, and choose New token. Assign a read-only scope unless a write operation is necessary. Copy the token once into an approved secrets vault. The system does not display the full token again. Rotate the token before its expiry and avoid pasting it into tickets"
+      },
+      {
+        "id": "heading-aware:20",
+        "index": 20,
+        "start": 97,
+        "end": 129,
+        "section": "Create an API token",
+        "excerpt": "full token again. Rotate the token before its expiry and avoid pasting it into tickets or logs. For a rejected token, check its scope and expiration before attempting to issue another credential."
+      },
+      {
+        "id": "heading-aware:21",
+        "index": 21,
+        "start": 129,
+        "end": 199,
+        "section": "Rotate an API token",
+        "excerpt": "## Rotate an API token Token rotation replaces an active credential without requiring an application restart. In the Access page, select the existing token and choose Rotate. The system issues a replacement credential and keeps the old credential usable for a five-minute transition window. Update the application secret during that window, then confirm that requests succeed with the replacement. Revoke the old token after verification. If the secret deployment fails,"
+      },
+      {
+        "id": "heading-aware:22",
+        "index": 22,
+        "start": 184,
+        "end": 215,
+        "section": "Rotate an API token",
+        "excerpt": "succeed with the replacement. Revoke the old token after verification. If the secret deployment fails, keep the old token only until the transition expires and repeat rotation with a new credential."
+      },
+      {
+        "id": "heading-aware:23",
+        "index": 23,
+        "start": 215,
+        "end": 285,
+        "section": "Recover a locked account",
+        "excerpt": "## Recover a locked account Five failed sign-in attempts trigger a fifteen-minute account lock. To regain access, select Forgot password on the sign-in screen and follow the one-time recovery link sent to the registered email address. The recovery link expires after twenty minutes. If the registered email is unavailable, contact the identity administrator to verify ownership through the established support process. Never share recovery links in a public chat. A"
+      },
+      {
+        "id": "heading-aware:24",
+        "index": 24,
+        "start": 270,
+        "end": 297,
+        "section": "Recover a locked account",
+        "excerpt": "ownership through the established support process. Never share recovery links in a public chat. A successful password reset does not bypass a separately enforced multi-factor authentication challenge."
+      },
+      {
+        "id": "heading-aware:25",
+        "index": 25,
+        "start": 297,
+        "end": 367,
+        "section": "Configure multi-factor authentication",
+        "excerpt": "## Configure multi-factor authentication Administrators require a second factor for privileged Atlas accounts. Open Profile, select Security, and register a time-based authenticator application. Scan the enrollment QR code using the authenticator, then enter the six-digit verification code. Store the recovery codes in an approved secure location, not alongside the password. Hardware security keys may also be registered where supported. If the mobile device is lost, use an unused recovery code"
+      },
+      {
+        "id": "heading-aware:26",
+        "index": 26,
+        "start": 352,
+        "end": 374,
+        "section": "Configure multi-factor authentication",
+        "excerpt": "be registered where supported. If the mobile device is lost, use an unused recovery code and immediately replace the missing authenticator enrollment."
+      },
+      {
+        "id": "heading-aware:27",
+        "index": 27,
+        "start": 374,
+        "end": 444,
+        "section": "Publish a document version",
+        "excerpt": "## Publish a document version Publishing makes a reviewed document revision visible to readers. Open the document, choose the target environment, and select Publish version. The publication queue records a version identifier and processing status. A successful queue acknowledgment does not guarantee that every edge cache has refreshed. Check the published version identifier from the reader endpoint before announcing completion. If the version is incorrect, publish the last approved revision"
+      },
+      {
+        "id": "heading-aware:28",
+        "index": 28,
+        "start": 429,
+        "end": 454,
+        "section": "Publish a document version",
+        "excerpt": "reader endpoint before announcing completion. If the version is incorrect, publish the last approved revision again rather than editing the already released artifact in place."
+      },
+      {
+        "id": "heading-aware:29",
+        "index": 29,
+        "start": 454,
+        "end": 524,
+        "section": "Roll back a release",
+        "excerpt": "## Roll back a release A rollback restores the last approved application artifact when a new release causes errors. Open Releases, locate the previous healthy deployment, and select Promote to production. Monitor error rate and request latency for ten minutes after promotion. A rollback changes the running application artifact but does not reverse database migrations automatically. If a migration is incompatible, follow the separate database recovery runbook before restoring application"
+      },
+      {
+        "id": "heading-aware:30",
+        "index": 30,
+        "start": 509,
+        "end": 537,
+        "section": "Roll back a release",
+        "excerpt": "automatically. If a migration is incompatible, follow the separate database recovery runbook before restoring application traffic. Record the incident and the promoted release identifier in the change log."
+      },
+      {
+        "id": "heading-aware:31",
+        "index": 31,
+        "start": 537,
+        "end": 607,
+        "section": "Investigate rate limits",
+        "excerpt": "## Investigate rate limits Atlas returns HTTP 429 when a client exceeds its request quota. The response includes a Retry-After header indicating when the client may send another request. Implement exponential backoff with jitter, and honor Retry-After when present. Avoid synchronized retries from many workers. Administrators can inspect quota usage on the Usage dashboard and request a higher limit through the support channel. Repeated 429 responses are not evidence that"
+      },
+      {
+        "id": "heading-aware:32",
+        "index": 32,
+        "start": 592,
+        "end": 617,
+        "section": "Investigate rate limits",
+        "excerpt": "request a higher limit through the support channel. Repeated 429 responses are not evidence that an API token is invalid; verify quotas before rotating credentials."
+      },
+      {
+        "id": "heading-aware:33",
+        "index": 33,
+        "start": 617,
+        "end": 687,
+        "section": "Diagnose a failed webhook",
+        "excerpt": "## Diagnose a failed webhook Webhook delivery failures appear in the Integrations event log. Open the failed delivery record to inspect its HTTP response code and retry count. The receiver must return a two-hundred-range status within five seconds to acknowledge delivery. Atlas retries transient failures with exponential delays for up to twenty-four hours. Verify that the receiver URL is reachable, TLS certificates are valid, and the signature header matches the"
+      },
+      {
+        "id": "heading-aware:34",
+        "index": 34,
+        "start": 672,
+        "end": 701,
+        "section": "Diagnose a failed webhook",
+        "excerpt": "the receiver URL is reachable, TLS certificates are valid, and the signature header matches the configured secret. Do not disable signature verification merely to make a failed delivery succeed."
+      },
+      {
+        "id": "heading-aware:35",
+        "index": 35,
+        "start": 701,
+        "end": 771,
+        "section": "Restore a database backup",
+        "excerpt": "## Restore a database backup Database restoration replaces the contents of the selected staging database with a stored snapshot. Confirm the destination environment, snapshot timestamp, and retention policy before starting. Run the restore from the Backups console and wait for the validation step to complete. Production restoration requires a separate change approval and is not performed by this staging procedure. After restoration, compare table counts and run application smoke tests."
+      },
+      {
+        "id": "heading-aware:36",
+        "index": 36,
+        "start": 756,
+        "end": 785,
+        "section": "Restore a database backup",
+        "excerpt": "performed by this staging procedure. After restoration, compare table counts and run application smoke tests. A successful restore job alone does not prove that all application workflows are healthy."
+      },
+      {
+        "id": "heading-aware:37",
+        "index": 37,
+        "start": 785,
+        "end": 855,
+        "section": "Export an audit log",
+        "excerpt": "## Export an audit log Security audit events are retained for ninety days in the standard Atlas plan. To export events, open Security, choose Audit log, select a date range, and download the CSV file. Exports include actor, action, resource identifier, and event timestamp. Store downloaded audit logs in restricted storage because they may reveal sensitive operational metadata. For investigations older than the retention window, consult the organization’s external archival"
+      },
+      {
+        "id": "heading-aware:38",
+        "index": 38,
+        "start": 840,
+        "end": 872,
+        "section": "Export an audit log",
+        "excerpt": "sensitive operational metadata. For investigations older than the retention window, consult the organization’s external archival system if one has been configured. Atlas does not promise recovery of events beyond its configured retention."
+      },
+      {
+        "id": "heading-aware:39",
+        "index": 39,
+        "start": 872,
+        "end": 942,
+        "section": "Configure a health check",
+        "excerpt": "## Configure a health check The health endpoint responds with HTTP 200 when the application is ready to serve traffic and HTTP 503 while required dependencies are unavailable. Configure the load balancer to call /health/ready every thirty seconds. Set the failure threshold to three consecutive unsuccessful probes to avoid unnecessary traffic shifts during brief network interruptions. A readiness check is not a substitute for end-to-end transaction monitoring. For debugging, inspect"
+      },
+      {
+        "id": "heading-aware:40",
+        "index": 40,
+        "start": 927,
+        "end": 956,
+        "section": "Configure a health check",
+        "excerpt": "interruptions. A readiness check is not a substitute for end-to-end transaction monitoring. For debugging, inspect dependency health and application logs before changing the probe interval or disabling health checks."
+      },
+      {
+        "id": "heading-aware:41",
+        "index": 41,
+        "start": 956,
+        "end": 1026,
+        "section": "Set up a scheduled report",
+        "excerpt": "## Set up a scheduled report Scheduled reports summarize Atlas usage at a selected interval. In Analytics, open Reports and select Create schedule. Choose a report template, weekly cadence, and destination email group. The report uses the workspace time zone, not the viewer's browser time zone. Verify the recipient list before enabling the schedule to prevent data leakage. A report may be delayed if the underlying analytics aggregation has not"
+      },
+      {
+        "id": "heading-aware:42",
+        "index": 42,
+        "start": 1011,
+        "end": 1043,
+        "section": "Set up a scheduled report",
+        "excerpt": "prevent data leakage. A report may be delayed if the underlying analytics aggregation has not finished. If a schedule is missing, inspect its status and the analytics processing queue before recreating it."
+      }
+    ]
+  },
+  "queries": [
+    {
+      "id": "q01",
+      "query": "where to make a new credential",
+      "relevant": {
+        "fixed": [
+          "fixed:1"
+        ],
+        "heading-aware": [
+          "heading-aware:1",
+          "heading-aware:19"
+        ]
+      }
+    },
+    {
+      "id": "q02",
+      "query": "what is the grace period for replacing secrets",
+      "relevant": {
+        "fixed": [
+          "fixed:2",
+          "fixed:3"
+        ],
+        "heading-aware": [
+          "heading-aware:2",
+          "heading-aware:3",
+          "heading-aware:21"
+        ]
+      }
+    },
+    {
+      "id": "q03",
+      "query": "how long does password reset link work",
+      "relevant": {
+        "fixed": [
+          "fixed:4"
+        ],
+        "heading-aware": [
+          "heading-aware:4",
+          "heading-aware:23"
+        ]
+      }
+    },
+    {
+      "id": "q04",
+      "query": "how to enroll a second factor",
+      "relevant": {
+        "fixed": [
+          "fixed:5"
+        ],
+        "heading-aware": [
+          "heading-aware:5",
+          "heading-aware:25"
+        ]
+      }
+    },
+    {
+      "id": "q05",
+      "query": "verify a newly released article is visible",
+      "relevant": {
+        "fixed": [
+          "fixed:7"
+        ],
+        "heading-aware": [
+          "heading-aware:7",
+          "heading-aware:27"
+        ]
+      }
+    },
+    {
+      "id": "q06",
+      "query": "undo a bad production deployment",
+      "relevant": {
+        "fixed": [
+          "fixed:8"
+        ],
+        "heading-aware": [
+          "heading-aware:8",
+          "heading-aware:29"
+        ]
+      }
+    },
+    {
+      "id": "q07",
+      "query": "what to do after too many API requests",
+      "relevant": {
+        "fixed": [
+          "fixed:10"
+        ],
+        "heading-aware": [
+          "heading-aware:10",
+          "heading-aware:31"
+        ]
+      }
+    },
+    {
+      "id": "q08",
+      "query": "why integration callbacks are not delivered",
+      "relevant": {
+        "fixed": [
+          "fixed:12"
+        ],
+        "heading-aware": [
+          "heading-aware:12",
+          "heading-aware:34"
+        ]
+      }
+    },
+    {
+      "id": "q09",
+      "query": "how to recover data from snapshot",
+      "relevant": {
+        "fixed": [
+          "fixed:13"
+        ],
+        "heading-aware": [
+          "heading-aware:13",
+          "heading-aware:35"
+        ]
+      }
+    },
+    {
+      "id": "q10",
+      "query": "download security events for an investigation",
+      "relevant": {
+        "fixed": [
+          "fixed:14"
+        ],
+        "heading-aware": [
+          "heading-aware:14",
+          "heading-aware:37"
+        ]
+      }
+    },
+    {
+      "id": "q11",
+      "query": "load balancer readiness endpoint interval",
+      "relevant": {
+        "fixed": [
+          "fixed:16"
+        ],
+        "heading-aware": [
+          "heading-aware:16",
+          "heading-aware:39"
+        ]
+      }
+    },
+    {
+      "id": "q12",
+      "query": "automatically email weekly usage summary",
+      "relevant": {
+        "fixed": [
+          "fixed:17"
+        ],
+        "heading-aware": [
+          "heading-aware:17",
+          "heading-aware:41"
+        ]
+      }
+    }
+  ],
+  "labelMethod": "mechanical answer-phrase containment in chunk text"
+}

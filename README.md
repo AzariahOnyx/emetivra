@@ -63,3 +63,15 @@ Run `npm test` and `npm run check`. See `DEPLOYMENT.md` for the GitHub and Verce
 5. Export JSON for reproducibility, Markdown for review, or CSV for tabular analysis.
 
 No files are uploaded. The comparison baseline is held in memory only. The main document audit history remains browser-local and may contain document text.
+
+## v1.1 — Reproducible synthetic retrieval case study
+
+The **Case Study** tab shows a committed, deterministic benchmark against a **fictional** Atlas operations handbook. The corpus, 12 developer-authored questions, answer-phrase definitions, generated labels, and per-query ranked evidence are under `benchmarks/v1.1/`.
+
+```bash
+npm run benchmark:case-study
+npm test
+npm run check
+```
+
+**Scientific honesty:** This is an illustrative synthetic experiment, **not independent human judgment**. Relevant chunk labels are mechanically derived when the first 500 characters of a chunk contain the author-specified exact answer phrase. The project does not claim the labels are unbiased, complete semantic relevance, or representative of production data. Do not cite these scores as evidence of real-world RAG accuracy. See [`benchmarks/v1.1/CASE_STUDY.md`](benchmarks/v1.1/CASE_STUDY.md) for the complete method, results, and limitations.

@@ -1,11 +1,12 @@
 {
   "name": "emetivra",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check src/app.mjs && node --check src/retrieval.mjs && node --check src/comparison.mjs && node --check src/comparison-ui.mjs && node --check src/judged.mjs && node --check src/judged-ui.mjs"
+    "check": "node --check src/app.mjs && node --check src/retrieval.mjs && node --check src/comparison.mjs && node --check src/comparison-ui.mjs && node --check src/judged.mjs && node --check src/judged-ui.mjs && node --check src/case-study-ui.mjs && node --check scripts/run-case-study.mjs",
+    "benchmark:case-study": "node scripts/run-case-study.mjs"
   },
   "engines": {
     "node": ">=20"

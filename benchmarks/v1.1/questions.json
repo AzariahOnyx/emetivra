@@ -1,0 +1,14 @@
+[
+  {"id":"q01","query":"where to make a new credential","answerPhrase":"choose New token","topic":"Create an API token"},
+  {"id":"q02","query":"what is the grace period for replacing secrets","answerPhrase":"five-minute transition window","topic":"Rotate an API token"},
+  {"id":"q03","query":"how long does password reset link work","answerPhrase":"expires after twenty minutes","topic":"Recover a locked account"},
+  {"id":"q04","query":"how to enroll a second factor","answerPhrase":"enter the six-digit verification code","topic":"Configure multi-factor authentication"},
+  {"id":"q05","query":"verify a newly released article is visible","answerPhrase":"Check the published version identifier","topic":"Publish a document version"},
+  {"id":"q06","query":"undo a bad production deployment","answerPhrase":"select Promote to production","topic":"Roll back a release"},
+  {"id":"q07","query":"what to do after too many API requests","answerPhrase":"honor Retry-After when present","topic":"Investigate rate limits"},
+  {"id":"q08","query":"why integration callbacks are not delivered","answerPhrase":"signature header matches the configured secret","topic":"Diagnose a failed webhook"},
+  {"id":"q09","query":"how to recover data from snapshot","answerPhrase":"Run the restore from the Backups console","topic":"Restore a database backup"},
+  {"id":"q10","query":"download security events for an investigation","answerPhrase":"download the CSV file","topic":"Export an audit log"},
+  {"id":"q11","query":"load balancer readiness endpoint interval","answerPhrase":"every thirty seconds","topic":"Configure a health check"},
+  {"id":"q12","query":"automatically email weekly usage summary","answerPhrase":"Choose a report template, weekly cadence","topic":"Set up a scheduled report"}
+]

@@ -1,0 +1,27 @@
+<PARSED TEXT FOR SHEET: 1 / 1 TABS
+TAB NAME: benchmarks__v1.1__report.csv>
+index,strategy,query_id,query,relevant_count,precision_at_k,recall_at_k,hit_at_k,reciprocal_rank_at_k,ndcg_at_k,ranked_chunk_ids
+0,fixed,q01,where to make a new credential,1,0.0,0.0,0,0.0,0.0,fixed:3;fixed:2;fixed:12
+1,fixed,q02,what is the grace period for replacing secrets,2,0.0,0.0,0,0.0,0.0,fixed:1;fixed:0;fixed:16
+2,fixed,q03,how long does password reset link work,1,0.3333333333333333,1.0,1,1.0,1.0,fixed:4;fixed:5;fixed:6
+3,fixed,q04,how to enroll a second factor,1,0.3333333333333333,1.0,1,1.0,1.0,fixed:5;fixed:16;fixed:4
+4,fixed,q05,verify a newly released article is visible,1,0.3333333333333333,1.0,1,1.0,1.0,fixed:7;fixed:6;fixed:8
+5,fixed,q06,undo a bad production deployment,1,0.3333333333333333,1.0,1,1.0,1.0,fixed:8;fixed:13;fixed:3
+6,fixed,q07,what to do after too many API requests,1,0.3333333333333333,1.0,1,1.0,1.0,fixed:10;fixed:3;fixed:12
+7,fixed,q08,why integration callbacks are not delivered,1,0.0,0.0,0,0.0,0.0,fixed:14;fixed:13;fixed:0
+8,fixed,q09,how to recover data from snapshot,1,0.3333333333333333,1.0,1,1.0,1.0,fixed:13;fixed:12;fixed:18
+9,fixed,q10,download security events for an investigation,1,0.3333333333333333,1.0,1,1.0,1.0,fixed:14;fixed:5;fixed:6
+10,fixed,q11,load balancer readiness endpoint interval,1,0.3333333333333333,1.0,1,1.0,1.0,fixed:16;fixed:17;fixed:7
+11,fixed,q12,automatically email weekly usage summary,1,0.3333333333333333,1.0,1,1.0,1.0,fixed:17;fixed:10;fixed:4
+12,heading-aware,q01,where to make a new credential,2,0.0,0.0,0,0.0,0.0,heading-aware:3;heading-aware:22;heading-aware:34
+13,heading-aware,q02,what is the grace period for replacing secrets,3,0.0,0.0,0,0.0,0.0,heading-aware:19;heading-aware:1;heading-aware:40
+14,heading-aware,q03,how long does password reset link work,2,0.6666666666666666,1.0,1,1.0,0.9197207891481876,heading-aware:4;heading-aware:24;heading-aware:23
+15,heading-aware,q04,how to enroll a second factor,2,0.6666666666666666,1.0,1,1.0,1.0,heading-aware:5;heading-aware:25;heading-aware:24
+16,heading-aware,q05,verify a newly released article is visible,2,0.6666666666666666,1.0,1,1.0,0.9197207891481876,heading-aware:7;heading-aware:28;heading-aware:27
+17,heading-aware,q06,undo a bad production deployment,2,0.6666666666666666,1.0,1,1.0,1.0,heading-aware:29;heading-aware:8;heading-aware:22
+18,heading-aware,q07,what to do after too many API requests,2,0.3333333333333333,0.5,1,1.0,0.6131471927654584,heading-aware:10;heading-aware:21;heading-aware:34
+19,heading-aware,q08,why integration callbacks are not delivered,2,0.3333333333333333,0.5,1,0.5,0.3868528072345416,heading-aware:32;heading-aware:34;heading-aware:36
+20,heading-aware,q09,how to recover data from snapshot,2,0.6666666666666666,1.0,1,1.0,1.0,heading-aware:35;heading-aware:13;heading-aware:12
+21,heading-aware,q10,download security events for an investigation,2,0.6666666666666666,1.0,1,1.0,1.0,heading-aware:37;heading-aware:14;heading-aware:25
+22,heading-aware,q11,load balancer readiness endpoint interval,2,0.6666666666666666,1.0,1,1.0,1.0,heading-aware:39;heading-aware:16;heading-aware:40
+23,heading-aware,q12,automatically email weekly usage summary,2,0.6666666666666666,1.0,1,1.0,1.0,heading-aware:41;heading-aware:17;heading-aware:10

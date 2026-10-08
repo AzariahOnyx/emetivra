@@ -1,0 +1,851 @@
+{
+  "schemaVersion": "1.0",
+  "type": "synthetic-answer-span-evaluation",
+  "evaluatedAt": "2026-10-08T00:00:00.000Z",
+  "provenance": {
+    "annotator": "EMETIVRA project author — rule-derived demo, NOT independent human review",
+    "annotationDate": "2026-10-08",
+    "corpusFingerprint": "fnv1a32:0b8cb02b:7113",
+    "queryCount": 12,
+    "labelType": "deterministic answer-phrase containment; developer-authored synthetic questions; NOT independent human judgments",
+    "labelMethod": "mechanical answer-phrase containment in chunk text",
+    "datasetKind": "illustrative synthetic; not representative of production workloads",
+    "questionCount": 12
+  },
+  "config": {
+    "k": 3,
+    "chunkSize": 70,
+    "overlap": 15,
+    "ranker": "BM25",
+    "k1": 1.2,
+    "b": 0.75
+  },
+  "strategies": {
+    "fixed": {
+      "chunkCount": 19,
+      "metrics": {
+        "precisionAtK": 0.25,
+        "recallAtK": 0.75,
+        "hitAtK": 0.75,
+        "reciprocalRankAtK": 0.75,
+        "ndcgAtK": 0.75
+      },
+      "results": [
+        {
+          "id": "q01",
+          "query": "where to make a new credential",
+          "precisionAtK": 0,
+          "recallAtK": 0,
+          "hitAtK": 0,
+          "reciprocalRankAtK": 0,
+          "ndcgAtK": 0,
+          "relevantCount": 1,
+          "top": [
+            {
+              "id": "fixed:3",
+              "rank": 1,
+              "relevant": false,
+              "score": 4.919774578981974,
+              "excerpt": "old credential usable for a five-minute transition window. Update the application secret during that window, then confirm that requests succeed with the replacement. Revoke the old token after verification. If the secret deployment fails, keep the old token only until the transition expires and repeat rotation with a new credential. ## Recover a lo"
+            },
+            {
+              "id": "fixed:2",
+              "rank": 2,
+              "relevant": false,
+              "score": 3.880423667648871,
+              "excerpt": "into tickets or logs. For a rejected token, check its scope and expiration before attempting to issue another credential. ## Rotate an API token Token rotation replaces an active credential without requiring an application restart. In the Access page, select the existing token and choose Rotate. The system issues a replacement credential and keeps "
+            },
+            {
+              "id": "fixed:12",
+              "rank": 3,
+              "relevant": false,
+              "score": 3.072229775453543,
+              "excerpt": "transient failures with exponential delays for up to twenty-four hours. Verify that the receiver URL is reachable, TLS certificates are valid, and the signature header matches the configured secret. Do not disable signature verification merely to make a failed delivery succeed. ## Restore a database backup Database restoration replaces the contents"
+            }
+          ]
+        },
+        {
+          "id": "q02",
+          "query": "what is the grace period for replacing secrets",
+          "precisionAtK": 0,
+          "recallAtK": 0,
+          "hitAtK": 0,
+          "reciprocalRankAtK": 0,
+          "ndcgAtK": 0,
+          "relevantCount": 2,
+          "top": [
+            {
+              "id": "fixed:1",
+              "rank": 1,
+              "relevant": false,
+              "score": 3.382077582214604,
+              "excerpt": "command-line clients. First sign in with an operator account, open the Access page, and choose New token. Assign a read-only scope unless a write operation is necessary. Copy the token once into an approved secrets vault. The system does not display the full token again. Rotate the token before its expiry and avoid pasting it into tickets or logs. "
+            },
+            {
+              "id": "fixed:0",
+              "rank": 2,
+              "relevant": false,
+              "score": 1.192883897372777,
+              "excerpt": "# Atlas Platform Operations Guide This fictional Atlas service handbook is a controlled test corpus for retrieval evaluation. It is not product documentation. All credentials, limits, addresses, and behaviors below are invented for this synthetic example. Each task describes one independent operation. ## Create an API token The token console issues"
+            },
+            {
+              "id": "fixed:16",
+              "rank": 3,
+              "relevant": false,
+              "score": 1.1105240266761993,
+              "excerpt": "responds with HTTP 200 when the application is ready to serve traffic and HTTP 503 while required dependencies are unavailable. Configure the load balancer to call /health/ready every thirty seconds. Set the failure threshold to three consecutive unsuccessful probes to avoid unnecessary traffic shifts during brief network interruptions. A readiness"
+            }
+          ]
+        },
+        {
+          "id": "q03",
+          "query": "how long does password reset link work",
+          "precisionAtK": 0.3333333333333333,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 1,
+          "top": [
+            {
+              "id": "fixed:4",
+              "rank": 1,
+              "relevant": true,
+              "score": 8.283243481494141,
+              "excerpt": "Five failed sign-in attempts trigger a fifteen-minute account lock. To regain access, select Forgot password on the sign-in screen and follow the one-time recovery link sent to the registered email address. The recovery link expires after twenty minutes. If the registered email is unavailable, contact the identity administrator to verify ownership "
+            },
+            {
+              "id": "fixed:5",
+              "rank": 2,
+              "relevant": false,
+              "score": 4.241178567864566,
+              "excerpt": "process. Never share recovery links in a public chat. A successful password reset does not bypass a separately enforced multi-factor authentication challenge. ## Configure multi-factor authentication Administrators require a second factor for privileged Atlas accounts. Open Profile, select Security, and register a time-based authenticator applicati"
+            },
+            {
+              "id": "fixed:6",
+              "rank": 3,
+              "relevant": false,
+              "score": 1.491654876777717,
+              "excerpt": "the six-digit verification code. Store the recovery codes in an approved secure location, not alongside the password. Hardware security keys may also be registered where supported. If the mobile device is lost, use an unused recovery code and immediately replace the missing authenticator enrollment. ## Publish a document version Publishing makes a "
+            }
+          ]
+        },
+        {
+          "id": "q04",
+          "query": "how to enroll a second factor",
+          "precisionAtK": 0.3333333333333333,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 1,
+          "top": [
+            {
+              "id": "fixed:5",
+              "rank": 1,
+              "relevant": true,
+              "score": 6.623655457545794,
+              "excerpt": "process. Never share recovery links in a public chat. A successful password reset does not bypass a separately enforced multi-factor authentication challenge. ## Configure multi-factor authentication Administrators require a second factor for privileged Atlas accounts. Open Profile, select Security, and register a time-based authenticator applicati"
+            },
+            {
+              "id": "fixed:16",
+              "rank": 2,
+              "relevant": false,
+              "score": 0.6014213971557082,
+              "excerpt": "responds with HTTP 200 when the application is ready to serve traffic and HTTP 503 while required dependencies are unavailable. Configure the load balancer to call /health/ready every thirty seconds. Set the failure threshold to three consecutive unsuccessful probes to avoid unnecessary traffic shifts during brief network interruptions. A readiness"
+            },
+            {
+              "id": "fixed:4",
+              "rank": 3,
+              "relevant": false,
+              "score": 0.5385364974315507,
+              "excerpt": "Five failed sign-in attempts trigger a fifteen-minute account lock. To regain access, select Forgot password on the sign-in screen and follow the one-time recovery link sent to the registered email address. The recovery link expires after twenty minutes. If the registered email is unavailable, contact the identity administrator to verify ownership "
+            }
+          ]
+        },
+        {
+          "id": "q05",
+          "query": "verify a newly released article is visible",
+          "precisionAtK": 0.3333333333333333,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 1,
+          "top": [
+            {
+              "id": "fixed:7",
+              "rank": 1,
+              "relevant": true,
+              "score": 4.613636635394326,
+              "excerpt": "visible to readers. Open the document, choose the target environment, and select Publish version. The publication queue records a version identifier and processing status. A successful queue acknowledgment does not guarantee that every edge cache has refreshed. Check the published version identifier from the reader endpoint before announcing comple"
+            },
+            {
+              "id": "fixed:6",
+              "rank": 2,
+              "relevant": false,
+              "score": 2.5072961157678413,
+              "excerpt": "the six-digit verification code. Store the recovery codes in an approved secure location, not alongside the password. Hardware security keys may also be registered where supported. If the mobile device is lost, use an unused recovery code and immediately replace the missing authenticator enrollment. ## Publish a document version Publishing makes a "
+            },
+            {
+              "id": "fixed:8",
+              "rank": 3,
+              "relevant": false,
+              "score": 2.134617281706447,
+              "excerpt": "the last approved revision again rather than editing the already released artifact in place. ## Roll back a release A rollback restores the last approved application artifact when a new release causes errors. Open Releases, locate the previous healthy deployment, and select Promote to production. Monitor error rate and request latency for ten minut"
+            }
+          ]
+        },
+        {
+          "id": "q06",
+          "query": "undo a bad production deployment",
+          "precisionAtK": 0.3333333333333333,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 1,
+          "top": [
+            {
+              "id": "fixed:8",
+              "rank": 1,
+              "relevant": true,
+              "score": 4.22628284289975,
+              "excerpt": "the last approved revision again rather than editing the already released artifact in place. ## Roll back a release A rollback restores the last approved application artifact when a new release causes errors. Open Releases, locate the previous healthy deployment, and select Promote to production. Monitor error rate and request latency for ten minut"
+            },
+            {
+              "id": "fixed:13",
+              "rank": 2,
+              "relevant": false,
+              "score": 2.119226668512291,
+              "excerpt": "database with a stored snapshot. Confirm the destination environment, snapshot timestamp, and retention policy before starting. Run the restore from the Backups console and wait for the validation step to complete. Production restoration requires a separate change approval and is not performed by this staging procedure. After restoration, compare t"
+            },
+            {
+              "id": "fixed:3",
+              "rank": 3,
+              "relevant": false,
+              "score": 2.0980518752903614,
+              "excerpt": "old credential usable for a five-minute transition window. Update the application secret during that window, then confirm that requests succeed with the replacement. Revoke the old token after verification. If the secret deployment fails, keep the old token only until the transition expires and repeat rotation with a new credential. ## Recover a lo"
+            }
+          ]
+        },
+        {
+          "id": "q07",
+          "query": "what to do after too many API requests",
+          "precisionAtK": 0.3333333333333333,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 1,
+          "top": [
+            {
+              "id": "fixed:10",
+              "rank": 1,
+              "relevant": true,
+              "score": 5.597424777005955,
+              "excerpt": "request quota. The response includes a Retry-After header indicating when the client may send another request. Implement exponential backoff with jitter, and honor Retry-After when present. Avoid synchronized retries from many workers. Administrators can inspect quota usage on the Usage dashboard and request a higher limit through the support chann"
+            },
+            {
+              "id": "fixed:3",
+              "rank": 2,
+              "relevant": false,
+              "score": 3.9891544061537623,
+              "excerpt": "old credential usable for a five-minute transition window. Update the application secret during that window, then confirm that requests succeed with the replacement. Revoke the old token after verification. If the secret deployment fails, keep the old token only until the transition expires and repeat rotation with a new credential. ## Recover a lo"
+            },
+            {
+              "id": "fixed:12",
+              "rank": 3,
+              "relevant": false,
+              "score": 3.0324446486210874,
+              "excerpt": "transient failures with exponential delays for up to twenty-four hours. Verify that the receiver URL is reachable, TLS certificates are valid, and the signature header matches the configured secret. Do not disable signature verification merely to make a failed delivery succeed. ## Restore a database backup Database restoration replaces the contents"
+            }
+          ]
+        },
+        {
+          "id": "q08",
+          "query": "why integration callbacks are not delivered",
+          "precisionAtK": 0,
+          "recallAtK": 0,
+          "hitAtK": 0,
+          "reciprocalRankAtK": 0,
+          "ndcgAtK": 0,
+          "relevantCount": 1,
+          "top": [
+            {
+              "id": "fixed:14",
+              "rank": 1,
+              "relevant": false,
+              "score": 1.745140896185842,
+              "excerpt": "tests. A successful restore job alone does not prove that all application workflows are healthy. ## Export an audit log Security audit events are retained for ninety days in the standard Atlas plan. To export events, open Security, choose Audit log, select a date range, and download the CSV file. Exports include actor, action, resource identifier, "
+            },
+            {
+              "id": "fixed:13",
+              "rank": 2,
+              "relevant": false,
+              "score": 1.3884414490426518,
+              "excerpt": "database with a stored snapshot. Confirm the destination environment, snapshot timestamp, and retention policy before starting. Run the restore from the Backups console and wait for the validation step to complete. Production restoration requires a separate change approval and is not performed by this staging procedure. After restoration, compare t"
+            },
+            {
+              "id": "fixed:0",
+              "rank": 3,
+              "relevant": false,
+              "score": 1.3163019892998555,
+              "excerpt": "# Atlas Platform Operations Guide This fictional Atlas service handbook is a controlled test corpus for retrieval evaluation. It is not product documentation. All credentials, limits, addresses, and behaviors below are invented for this synthetic example. Each task describes one independent operation. ## Create an API token The token console issues"
+            }
+          ]
+        },
+        {
+          "id": "q09",
+          "query": "how to recover data from snapshot",
+          "precisionAtK": 0.3333333333333333,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 1,
+          "top": [
+            {
+              "id": "fixed:13",
+              "rank": 1,
+              "relevant": true,
+              "score": 4.9237850489958594,
+              "excerpt": "database with a stored snapshot. Confirm the destination environment, snapshot timestamp, and retention policy before starting. Run the restore from the Backups console and wait for the validation step to complete. Production restoration requires a separate change approval and is not performed by this staging procedure. After restoration, compare t"
+            },
+            {
+              "id": "fixed:12",
+              "rank": 2,
+              "relevant": false,
+              "score": 3.301409602985035,
+              "excerpt": "transient failures with exponential delays for up to twenty-four hours. Verify that the receiver URL is reachable, TLS certificates are valid, and the signature header matches the configured secret. Do not disable signature verification merely to make a failed delivery succeed. ## Restore a database backup Database restoration replaces the contents"
+            },
+            {
+              "id": "fixed:18",
+              "rank": 3,
+              "relevant": false,
+              "score": 3.212213621735577,
+              "excerpt": "report uses the workspace time zone, not the viewer's browser time zone. Verify the recipient list before enabling the schedule to prevent data leakage. A report may be delayed if the underlying analytics aggregation has not finished. If a schedule is missing, inspect its status and the analytics processing queue before recreating it."
+            }
+          ]
+        },
+        {
+          "id": "q10",
+          "query": "download security events for an investigation",
+          "precisionAtK": 0.3333333333333333,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 1,
+          "top": [
+            {
+              "id": "fixed:14",
+              "rank": 1,
+              "relevant": true,
+              "score": 9.138560540179054,
+              "excerpt": "tests. A successful restore job alone does not prove that all application workflows are healthy. ## Export an audit log Security audit events are retained for ninety days in the standard Atlas plan. To export events, open Security, choose Audit log, select a date range, and download the CSV file. Exports include actor, action, resource identifier, "
+            },
+            {
+              "id": "fixed:5",
+              "rank": 2,
+              "relevant": false,
+              "score": 2.9401302648168244,
+              "excerpt": "process. Never share recovery links in a public chat. A successful password reset does not bypass a separately enforced multi-factor authentication challenge. ## Configure multi-factor authentication Administrators require a second factor for privileged Atlas accounts. Open Profile, select Security, and register a time-based authenticator applicati"
+            },
+            {
+              "id": "fixed:6",
+              "rank": 3,
+              "relevant": false,
+              "score": 2.9195102063879883,
+              "excerpt": "the six-digit verification code. Store the recovery codes in an approved secure location, not alongside the password. Hardware security keys may also be registered where supported. If the mobile device is lost, use an unused recovery code and immediately replace the missing authenticator enrollment. ## Publish a document version Publishing makes a "
+            }
+          ]
+        },
+        {
+          "id": "q11",
+          "query": "load balancer readiness endpoint interval",
+          "precisionAtK": 0.3333333333333333,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 1,
+          "top": [
+            {
+              "id": "fixed:16",
+              "rank": 1,
+              "relevant": true,
+              "score": 7.636907660727326,
+              "excerpt": "responds with HTTP 200 when the application is ready to serve traffic and HTTP 503 while required dependencies are unavailable. Configure the load balancer to call /health/ready every thirty seconds. Set the failure threshold to three consecutive unsuccessful probes to avoid unnecessary traffic shifts during brief network interruptions. A readiness"
+            },
+            {
+              "id": "fixed:17",
+              "rank": 2,
+              "relevant": false,
+              "score": 3.5332253629641928,
+              "excerpt": "for end-to-end transaction monitoring. For debugging, inspect dependency health and application logs before changing the probe interval or disabling health checks. ## Set up a scheduled report Scheduled reports summarize Atlas usage at a selected interval. In Analytics, open Reports and select Create schedule. Choose a report template, weekly caden"
+            },
+            {
+              "id": "fixed:7",
+              "rank": 3,
+              "relevant": false,
+              "score": 2.0916655611933033,
+              "excerpt": "visible to readers. Open the document, choose the target environment, and select Publish version. The publication queue records a version identifier and processing status. A successful queue acknowledgment does not guarantee that every edge cache has refreshed. Check the published version identifier from the reader endpoint before announcing comple"
+            }
+          ]
+        },
+        {
+          "id": "q12",
+          "query": "automatically email weekly usage summary",
+          "precisionAtK": 0.3333333333333333,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 1,
+          "top": [
+            {
+              "id": "fixed:17",
+              "rank": 1,
+              "relevant": true,
+              "score": 6.671175470577964,
+              "excerpt": "for end-to-end transaction monitoring. For debugging, inspect dependency health and application logs before changing the probe interval or disabling health checks. ## Set up a scheduled report Scheduled reports summarize Atlas usage at a selected interval. In Analytics, open Reports and select Create schedule. Choose a report template, weekly caden"
+            },
+            {
+              "id": "fixed:10",
+              "rank": 2,
+              "relevant": false,
+              "score": 2.84779010599106,
+              "excerpt": "request quota. The response includes a Retry-After header indicating when the client may send another request. Implement exponential backoff with jitter, and honor Retry-After when present. Avoid synchronized retries from many workers. Administrators can inspect quota usage on the Usage dashboard and request a higher limit through the support chann"
+            },
+            {
+              "id": "fixed:4",
+              "rank": 3,
+              "relevant": false,
+              "score": 2.8140070071941543,
+              "excerpt": "Five failed sign-in attempts trigger a fifteen-minute account lock. To regain access, select Forgot password on the sign-in screen and follow the one-time recovery link sent to the registered email address. The recovery link expires after twenty minutes. If the registered email is unavailable, contact the identity administrator to verify ownership "
+            }
+          ]
+        }
+      ]
+    },
+    "heading-aware": {
+      "chunkCount": 43,
+      "metrics": {
+        "precisionAtK": 0.5000000000000001,
+        "recallAtK": 0.75,
+        "hitAtK": 0.8333333333333334,
+        "reciprocalRankAtK": 0.7916666666666666,
+        "ndcgAtK": 0.736620131524698
+      },
+      "results": [
+        {
+          "id": "q01",
+          "query": "where to make a new credential",
+          "precisionAtK": 0,
+          "recallAtK": 0,
+          "hitAtK": 0,
+          "reciprocalRankAtK": 0,
+          "ndcgAtK": 0,
+          "relevantCount": 2,
+          "top": [
+            {
+              "id": "heading-aware:3",
+              "rank": 1,
+              "relevant": false,
+              "score": 5.07224743681124,
+              "excerpt": "old credential usable for a five-minute transition window. Update the application secret during that window, then confirm that requests succeed with the replacement. Revoke the old token after verification. If the secret deployment fails, keep the old token only until the transition expires and repeat rotation with a new credential. ## Recover a lo"
+            },
+            {
+              "id": "heading-aware:22",
+              "rank": 2,
+              "relevant": false,
+              "score": 5.049451373905114,
+              "excerpt": "succeed with the replacement. Revoke the old token after verification. If the secret deployment fails, keep the old token only until the transition expires and repeat rotation with a new credential."
+            },
+            {
+              "id": "heading-aware:34",
+              "rank": 3,
+              "relevant": false,
+              "score": 4.408820735933445,
+              "excerpt": "the receiver URL is reachable, TLS certificates are valid, and the signature header matches the configured secret. Do not disable signature verification merely to make a failed delivery succeed."
+            }
+          ]
+        },
+        {
+          "id": "q02",
+          "query": "what is the grace period for replacing secrets",
+          "precisionAtK": 0,
+          "recallAtK": 0,
+          "hitAtK": 0,
+          "reciprocalRankAtK": 0,
+          "ndcgAtK": 0,
+          "relevantCount": 3,
+          "top": [
+            {
+              "id": "heading-aware:19",
+              "rank": 1,
+              "relevant": false,
+              "score": 3.6196909423264945,
+              "excerpt": "## Create an API token The token console issues short-lived API tokens for command-line clients. First sign in with an operator account, open the Access page, and choose New token. Assign a read-only scope unless a write operation is necessary. Copy the token once into an approved secrets vault. The system does not display the full token again. Rot"
+            },
+            {
+              "id": "heading-aware:1",
+              "rank": 2,
+              "relevant": false,
+              "score": 3.6174314348342804,
+              "excerpt": "command-line clients. First sign in with an operator account, open the Access page, and choose New token. Assign a read-only scope unless a write operation is necessary. Copy the token once into an approved secrets vault. The system does not display the full token again. Rotate the token before its expiry and avoid pasting it into tickets or logs. "
+            },
+            {
+              "id": "heading-aware:40",
+              "rank": 3,
+              "relevant": false,
+              "score": 1.5094367064701752,
+              "excerpt": "interruptions. A readiness check is not a substitute for end-to-end transaction monitoring. For debugging, inspect dependency health and application logs before changing the probe interval or disabling health checks."
+            }
+          ]
+        },
+        {
+          "id": "q03",
+          "query": "how long does password reset link work",
+          "precisionAtK": 0.6666666666666666,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 0.9197207891481876,
+          "relevantCount": 2,
+          "top": [
+            {
+              "id": "heading-aware:4",
+              "rank": 1,
+              "relevant": true,
+              "score": 9.170832870560009,
+              "excerpt": "Five failed sign-in attempts trigger a fifteen-minute account lock. To regain access, select Forgot password on the sign-in screen and follow the one-time recovery link sent to the registered email address. The recovery link expires after twenty minutes. If the registered email is unavailable, contact the identity administrator to verify ownership "
+            },
+            {
+              "id": "heading-aware:24",
+              "rank": 2,
+              "relevant": false,
+              "score": 6.798596134733307,
+              "excerpt": "ownership through the established support process. Never share recovery links in a public chat. A successful password reset does not bypass a separately enforced multi-factor authentication challenge."
+            },
+            {
+              "id": "heading-aware:23",
+              "rank": 3,
+              "relevant": true,
+              "score": 5.299366733932548,
+              "excerpt": "## Recover a locked account Five failed sign-in attempts trigger a fifteen-minute account lock. To regain access, select Forgot password on the sign-in screen and follow the one-time recovery link sent to the registered email address. The recovery link expires after twenty minutes. If the registered email is unavailable, contact the identity admini"
+            }
+          ]
+        },
+        {
+          "id": "q04",
+          "query": "how to enroll a second factor",
+          "precisionAtK": 0.6666666666666666,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 2,
+          "top": [
+            {
+              "id": "heading-aware:5",
+              "rank": 1,
+              "relevant": true,
+              "score": 6.530537350080216,
+              "excerpt": "process. Never share recovery links in a public chat. A successful password reset does not bypass a separately enforced multi-factor authentication challenge. ## Configure multi-factor authentication Administrators require a second factor for privileged Atlas accounts. Open Profile, select Security, and register a time-based authenticator applicati"
+            },
+            {
+              "id": "heading-aware:25",
+              "rank": 2,
+              "relevant": true,
+              "score": 6.003867097971913,
+              "excerpt": "## Configure multi-factor authentication Administrators require a second factor for privileged Atlas accounts. Open Profile, select Security, and register a time-based authenticator application. Scan the enrollment QR code using the authenticator, then enter the six-digit verification code. Store the recovery codes in an approved secure location, n"
+            },
+            {
+              "id": "heading-aware:24",
+              "rank": 3,
+              "relevant": false,
+              "score": 3.3671151343731327,
+              "excerpt": "ownership through the established support process. Never share recovery links in a public chat. A successful password reset does not bypass a separately enforced multi-factor authentication challenge."
+            }
+          ]
+        },
+        {
+          "id": "q05",
+          "query": "verify a newly released article is visible",
+          "precisionAtK": 0.6666666666666666,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 0.9197207891481876,
+          "relevantCount": 2,
+          "top": [
+            {
+              "id": "heading-aware:7",
+              "rank": 1,
+              "relevant": true,
+              "score": 5.237486407904712,
+              "excerpt": "visible to readers. Open the document, choose the target environment, and select Publish version. The publication queue records a version identifier and processing status. A successful queue acknowledgment does not guarantee that every edge cache has refreshed. Check the published version identifier from the reader endpoint before announcing comple"
+            },
+            {
+              "id": "heading-aware:28",
+              "rank": 2,
+              "relevant": false,
+              "score": 3.8760107259074856,
+              "excerpt": "reader endpoint before announcing completion. If the version is incorrect, publish the last approved revision again rather than editing the already released artifact in place."
+            },
+            {
+              "id": "heading-aware:27",
+              "rank": 3,
+              "relevant": true,
+              "score": 2.903170599046327,
+              "excerpt": "## Publish a document version Publishing makes a reviewed document revision visible to readers. Open the document, choose the target environment, and select Publish version. The publication queue records a version identifier and processing status. A successful queue acknowledgment does not guarantee that every edge cache has refreshed. Check the pu"
+            }
+          ]
+        },
+        {
+          "id": "q06",
+          "query": "undo a bad production deployment",
+          "precisionAtK": 0.6666666666666666,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 2,
+          "top": [
+            {
+              "id": "heading-aware:29",
+              "rank": 1,
+              "relevant": true,
+              "score": 4.210905745422908,
+              "excerpt": "## Roll back a release A rollback restores the last approved application artifact when a new release causes errors. Open Releases, locate the previous healthy deployment, and select Promote to production. Monitor error rate and request latency for ten minutes after promotion. A rollback changes the running application artifact but does not reverse "
+            },
+            {
+              "id": "heading-aware:8",
+              "rank": 2,
+              "relevant": true,
+              "score": 4.20363660793126,
+              "excerpt": "the last approved revision again rather than editing the already released artifact in place. ## Roll back a release A rollback restores the last approved application artifact when a new release causes errors. Open Releases, locate the previous healthy deployment, and select Promote to production. Monitor error rate and request latency for ten minut"
+            },
+            {
+              "id": "heading-aware:22",
+              "rank": 3,
+              "relevant": false,
+              "score": 2.679591508404396,
+              "excerpt": "succeed with the replacement. Revoke the old token after verification. If the secret deployment fails, keep the old token only until the transition expires and repeat rotation with a new credential."
+            }
+          ]
+        },
+        {
+          "id": "q07",
+          "query": "what to do after too many API requests",
+          "precisionAtK": 0.3333333333333333,
+          "recallAtK": 0.5,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 0.6131471927654584,
+          "relevantCount": 2,
+          "top": [
+            {
+              "id": "heading-aware:10",
+              "rank": 1,
+              "relevant": true,
+              "score": 5.805119318409501,
+              "excerpt": "request quota. The response includes a Retry-After header indicating when the client may send another request. Implement exponential backoff with jitter, and honor Retry-After when present. Avoid synchronized retries from many workers. Administrators can inspect quota usage on the Usage dashboard and request a higher limit through the support chann"
+            },
+            {
+              "id": "heading-aware:21",
+              "rank": 2,
+              "relevant": false,
+              "score": 5.3938093292228135,
+              "excerpt": "## Rotate an API token Token rotation replaces an active credential without requiring an application restart. In the Access page, select the existing token and choose Rotate. The system issues a replacement credential and keeps the old credential usable for a five-minute transition window. Update the application secret during that window, then conf"
+            },
+            {
+              "id": "heading-aware:34",
+              "rank": 3,
+              "relevant": false,
+              "score": 4.304299651030648,
+              "excerpt": "the receiver URL is reachable, TLS certificates are valid, and the signature header matches the configured secret. Do not disable signature verification merely to make a failed delivery succeed."
+            }
+          ]
+        },
+        {
+          "id": "q08",
+          "query": "why integration callbacks are not delivered",
+          "precisionAtK": 0.3333333333333333,
+          "recallAtK": 0.5,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 0.5,
+          "ndcgAtK": 0.38685280723454163,
+          "relevantCount": 2,
+          "top": [
+            {
+              "id": "heading-aware:32",
+              "rank": 1,
+              "relevant": false,
+              "score": 1.9809330544904156,
+              "excerpt": "request a higher limit through the support channel. Repeated 429 responses are not evidence that an API token is invalid; verify quotas before rotating credentials."
+            },
+            {
+              "id": "heading-aware:34",
+              "rank": 2,
+              "relevant": true,
+              "score": 1.9112956213497054,
+              "excerpt": "the receiver URL is reachable, TLS certificates are valid, and the signature header matches the configured secret. Do not disable signature verification merely to make a failed delivery succeed."
+            },
+            {
+              "id": "heading-aware:36",
+              "rank": 3,
+              "relevant": false,
+              "score": 1.9112956213497054,
+              "excerpt": "performed by this staging procedure. After restoration, compare table counts and run application smoke tests. A successful restore job alone does not prove that all application workflows are healthy."
+            }
+          ]
+        },
+        {
+          "id": "q09",
+          "query": "how to recover data from snapshot",
+          "precisionAtK": 0.6666666666666666,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 2,
+          "top": [
+            {
+              "id": "heading-aware:35",
+              "rank": 1,
+              "relevant": true,
+              "score": 5.610214148832002,
+              "excerpt": "## Restore a database backup Database restoration replaces the contents of the selected staging database with a stored snapshot. Confirm the destination environment, snapshot timestamp, and retention policy before starting. Run the restore from the Backups console and wait for the validation step to complete. Production restoration requires a separ"
+            },
+            {
+              "id": "heading-aware:13",
+              "rank": 2,
+              "relevant": true,
+              "score": 5.580321750419347,
+              "excerpt": "database with a stored snapshot. Confirm the destination environment, snapshot timestamp, and retention policy before starting. Run the restore from the Backups console and wait for the validation step to complete. Production restoration requires a separate change approval and is not performed by this staging procedure. After restoration, compare t"
+            },
+            {
+              "id": "heading-aware:12",
+              "rank": 3,
+              "relevant": false,
+              "score": 4.013441187146929,
+              "excerpt": "transient failures with exponential delays for up to twenty-four hours. Verify that the receiver URL is reachable, TLS certificates are valid, and the signature header matches the configured secret. Do not disable signature verification merely to make a failed delivery succeed. ## Restore a database backup Database restoration replaces the contents"
+            }
+          ]
+        },
+        {
+          "id": "q10",
+          "query": "download security events for an investigation",
+          "precisionAtK": 0.6666666666666666,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 2,
+          "top": [
+            {
+              "id": "heading-aware:37",
+              "rank": 1,
+              "relevant": true,
+              "score": 10.137636036398067,
+              "excerpt": "## Export an audit log Security audit events are retained for ninety days in the standard Atlas plan. To export events, open Security, choose Audit log, select a date range, and download the CSV file. Exports include actor, action, resource identifier, and event timestamp. Store downloaded audit logs in restricted storage because they may reveal se"
+            },
+            {
+              "id": "heading-aware:14",
+              "rank": 2,
+              "relevant": true,
+              "score": 9.97014522685854,
+              "excerpt": "tests. A successful restore job alone does not prove that all application workflows are healthy. ## Export an audit log Security audit events are retained for ninety days in the standard Atlas plan. To export events, open Security, choose Audit log, select a date range, and download the CSV file. Exports include actor, action, resource identifier, "
+            },
+            {
+              "id": "heading-aware:25",
+              "rank": 3,
+              "relevant": false,
+              "score": 4.658600335135983,
+              "excerpt": "## Configure multi-factor authentication Administrators require a second factor for privileged Atlas accounts. Open Profile, select Security, and register a time-based authenticator application. Scan the enrollment QR code using the authenticator, then enter the six-digit verification code. Store the recovery codes in an approved secure location, n"
+            }
+          ]
+        },
+        {
+          "id": "q11",
+          "query": "load balancer readiness endpoint interval",
+          "precisionAtK": 0.6666666666666666,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 2,
+          "top": [
+            {
+              "id": "heading-aware:39",
+              "rank": 1,
+              "relevant": true,
+              "score": 9.468812549762848,
+              "excerpt": "## Configure a health check The health endpoint responds with HTTP 200 when the application is ready to serve traffic and HTTP 503 while required dependencies are unavailable. Configure the load balancer to call /health/ready every thirty seconds. Set the failure threshold to three consecutive unsuccessful probes to avoid unnecessary traffic shifts"
+            },
+            {
+              "id": "heading-aware:16",
+              "rank": 2,
+              "relevant": true,
+              "score": 7.517849439808274,
+              "excerpt": "responds with HTTP 200 when the application is ready to serve traffic and HTTP 503 while required dependencies are unavailable. Configure the load balancer to call /health/ready every thirty seconds. Set the failure threshold to three consecutive unsuccessful probes to avoid unnecessary traffic shifts during brief network interruptions. A readiness"
+            },
+            {
+              "id": "heading-aware:40",
+              "rank": 3,
+              "relevant": false,
+              "score": 6.273965492539553,
+              "excerpt": "interruptions. A readiness check is not a substitute for end-to-end transaction monitoring. For debugging, inspect dependency health and application logs before changing the probe interval or disabling health checks."
+            }
+          ]
+        },
+        {
+          "id": "q12",
+          "query": "automatically email weekly usage summary",
+          "precisionAtK": 0.6666666666666666,
+          "recallAtK": 1,
+          "hitAtK": 1,
+          "reciprocalRankAtK": 1,
+          "ndcgAtK": 1,
+          "relevantCount": 2,
+          "top": [
+            {
+              "id": "heading-aware:41",
+              "rank": 1,
+              "relevant": true,
+              "score": 6.885727268551063,
+              "excerpt": "## Set up a scheduled report Scheduled reports summarize Atlas usage at a selected interval. In Analytics, open Reports and select Create schedule. Choose a report template, weekly cadence, and destination email group. The report uses the workspace time zone, not the viewer's browser time zone. Verify the recipient list before enabling the schedule"
+            },
+            {
+              "id": "heading-aware:17",
+              "rank": 2,
+              "relevant": true,
+              "score": 6.797891008648323,
+              "excerpt": "for end-to-end transaction monitoring. For debugging, inspect dependency health and application logs before changing the probe interval or disabling health checks. ## Set up a scheduled report Scheduled reports summarize Atlas usage at a selected interval. In Analytics, open Reports and select Create schedule. Choose a report template, weekly caden"
+            },
+            {
+              "id": "heading-aware:10",
+              "rank": 3,
+              "relevant": false,
+              "score": 2.9606349262594045,
+              "excerpt": "request quota. The response includes a Retry-After header indicating when the client may send another request. Implement exponential backoff with jitter, and honor Retry-After when present. Avoid synchronized retries from many workers. Administrators can inspect quota usage on the Usage dashboard and request a higher limit through the support chann"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Phrase containment measures lexical answer-span presence, not complete semantic relevance or answer correctness.",
+    "This is a developer-authored, rule-labeled synthetic benchmark; no independent human relevance judgments were collected.",
+    "Judgments are supplied by the evaluator and cannot be independently verified by this app.",
+    "Chunk relevance depends on the strategy; rankings are not directly comparable without consistent annotation criteria.",
+    "Precision@K divides by K even when fewer than K chunks exist; recall divides by all manually relevant chunks.",
+    "Unjudged chunks are treated as nonrelevant; incomplete relevance annotation biases the metrics.",
+    "A small or cherry-picked query set is not representative; report dataset selection and annotation procedure.",
+    "BM25 is lexical only. No embedding retrieval, LLM generation, or answer grounding is measured."
+  ]
+}
