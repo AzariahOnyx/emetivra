@@ -80,3 +80,4 @@ Recruit at least two independent reviewers to judge full chunk relevance for rea
 - **q10** (download security events for an investigation): top heading-aware:37 ✓, heading-aware:14 ✓, heading-aware:25 ×; Recall@3 100.0%, RR@3 100.0%.
 - **q11** (load balancer readiness endpoint interval): top heading-aware:39 ✓, heading-aware:16 ✓, heading-aware:40 ×; Recall@3 100.0%, RR@3 100.0%.
 - **q12** (automatically email weekly usage summary): top heading-aware:41 ✓, heading-aware:17 ✓, heading-aware:10 ×; Recall@3 100.0%, RR@3 100.0%.
+
